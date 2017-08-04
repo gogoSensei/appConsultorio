@@ -1,2 +1,4 @@
 psycopg2==2.7.3
 flask==0.12.2
+wtforms
+flask_wtf
