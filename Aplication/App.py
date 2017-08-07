@@ -23,19 +23,10 @@ def ini():
 def login():
 	_form = forms.iniForm(request.form)
 	if (request.method in ['POST'] and _form.validate()):
-		r = db.rawQuery("SELECT * FROM usuarios WHERE email = TRIM('{0}')".format(_form.email.data))
-		print(r)
-		if (r == []):
-			flash('El usuario no existe')
-			return render_template('login.html', form = _form)
-		for _data in r:
-			password = _data[3]
-			_compare = (_form.password.data).encode()
-			if (password != hashlib.sha224(_compare).hexdigest()):
-				flash('La contraseña es incorrecta')
-				return render_template('login.html', form = _form)
-		return render_template('index.html', form = _form)
-	#r_make = make_response()
+		_login = db.rawQuery("SELECT gr_login_user('{0}', '{1}')".format(_form.email.data, _form.password.data))[0][0]
+		if (_login):
+			return render_template('index.html', form = _form)
+		flash('El usuario o contraseña es incorrecta')
 	return render_template('login.html', form = _form)
 
 """
