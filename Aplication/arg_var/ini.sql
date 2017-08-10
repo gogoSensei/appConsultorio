@@ -23,7 +23,7 @@ INSERT INTO usuarios VALUES(DEFAULT,
                             TRUE,
                             NOW()::DATE,
                             NULL);
-
+*/
 -- IRM 06/08/2017 Funcion de login para los usuarios
 CREATE OR REPLACE FUNCTION gr_login_user(p_usuarios TEXT, p_password TEXT)
   RETURNS BOOLEAN as $$
@@ -38,5 +38,5 @@ BEGIN
   RETURN FALSE;
 END;$$
 LANGUAGE plpgsql;
-*/
+
 
