@@ -36,7 +36,7 @@
     {% from "macros.html" import render_entryes %}
     {% with messages = get_flashed_messages() %}
       {% if messages %}
-        {% for message in messages %}
+        {% for message in messages %}d
           <dir class="alert alert-success"> {{ message }} </dir>
         {% endfor %}
       {% endif %}

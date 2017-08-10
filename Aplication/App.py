@@ -29,6 +29,11 @@ def login():
 		flash('El usuario o contraseña es incorrecta')
 	return render_template('login.html', form = _form)
 
+@app.route("/pacientes", methods=['GET', 'POST'])
+def pacientes():
+	print('yes pass for here')
+	return render_template('pacientes.html')
+
 """
 Modo de agregar password con cifrado
 import hashlib
