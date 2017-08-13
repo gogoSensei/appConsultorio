@@ -34,6 +34,9 @@ def pacientes():
 	print('yes pass for here')
 	return render_template('pacientes.html')
 
+
+
+
 """
 Modo de agregar password con cifrado
 import hashlib
