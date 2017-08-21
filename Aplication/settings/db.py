@@ -1,10 +1,11 @@
 from psycopg2 import *
-from Aplication.settings.bases import *
+from Aplication.settings import config as c
 
 class conectionDb(object):
   """docstring for conectionDb"""
   def __init__(self):
-    self.conecta = 'dbname={0} user={1} password={2} host={3}'.format(arg["dbname"],arg["usuario"],arg["pass"],arg["host"]) 
+    base = c.ConfigDevelop.DATA_BASE
+    self.conecta = 'dbname={0} user={1} password={2} host={3}'.format(base["dbname"],base["usuario"],base["pass"],base["host"]) 
     #super(conectionDb, self).__init__()
     #self.arg = arg
   

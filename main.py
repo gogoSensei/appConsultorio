@@ -1,4 +1,5 @@
-from Aplication.App import app
+from Aplication.App import *
 
 if (__name__=='__main__'):
-    app.run(debug=True, port=5000)
+  csrf.init_app(app)
+  app.run(port=5000)
