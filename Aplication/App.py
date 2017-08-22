@@ -48,15 +48,6 @@ def beforeRequest():
       session.pop('lastUse')
       session.pop('usermail')
       return redirect(url_for('ini'))
-  finally:
+  except:
     session['lastUse'] = g.lastUse = datetime.now() + timedelta(minutes=5)
   print(str(session['lastUse']))
-
-
-
-"""
-Modo de agregar password con cifrado
-import hashlib
-pass = b"kmotin818"
-hashlib.sha224(pass).hexdigest()
-"""
